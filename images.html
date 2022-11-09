@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images</title>
+</head>
+<body style="background-color:rgb(161, 132, 132) ;">
+    <h2>Christ University Images</h2>
+<p>Click on the Images to get more images</p>
+
+<img src="new.png" alt="Workplace" usemap="#workmap" width="400" height="320">
+
+<map name="workmap">
+  <area shape="rect" coords="2,3,130,184" alt="image" href="img1.webp">
+  <area shape="rect" coords="135,1,396,207" alt="image1" href="img2.webp">
+  <area shape="rect" coords="2,190,164,319" alt="image2" href="img3.webp">
+  <area shape="rect" coords="166,219,397,315" alt="image3" href="img4.webp">
+
+</map>
+
+    
+</body>
+</html>
+<script>
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  
+  // Create gradient
+  var grd = ctx.createLinearGradient(0, 0, 200, 0);
+  grd.addColorStop(0, "red");
+  grd.addColorStop(1, "white");
+  
+  // Fill with gradient
+  ctx.fillStyle = grd;
+  ctx.fillRect(10, 10, 150, 80);
+  </script>
+  

@@ -3,7 +3,7 @@
 <merchandize_shop>
 	<items>
 		<name>Tshirts</name>
-		<price>$5.95</price>
+		<price>5.95</price>
 		<description>
     Our famous Tshirt with great artwork
    </description>
@@ -11,7 +11,7 @@
 	</items>
 	<items>
 		<name>Shirt</name>
-		<price>$9.80</price>
+		<price>9.80</price>
 		<description>
    Shirts with christ logo.
    </description>
@@ -19,7 +19,7 @@
 	</items>
 	<items>
 		<name>Accesories</name>
-		<price>$2.34</price>
+		<price>2.34</price>
 		<description>
    Christ Accesories which look good.
    </description>
@@ -27,7 +27,7 @@
 	</items>
 	<items>
 		<name>Stickers</name>
-		<price>$0.34</price>
+		<price>0.34</price>
 		<description>
    Christ Stickers with a lot of variations.
    </description>
@@ -35,7 +35,7 @@
 	</items>
 	<items>
 		<name>Tags</name>
-		<price>$0.34</price>
+		<price>0.34</price>
 		<description>
    Christ Tags with a lot of variations.
    </description>
@@ -43,7 +43,7 @@
 	</items>
 	<items>
 		<name>Mugs</name>
-		<price>$5.34</price>
+		<price>5.34</price>
 		<description>
    Beautiful mugs to reminense your memories.
    </description>
@@ -51,7 +51,7 @@
 	</items>
 	<items>
 		<name>Phone Covers</name>
-		<price>$6.34</price>
+		<price>6.34</price>
 		<description>
     Beautiful Mobile Covers with a lot of options.
    </description>
@@ -59,7 +59,7 @@
 	</items>
 	<items>
 		<name>Number plates</name>
-		<price>$12.34</price>
+		<price>12.34</price>
 		<description>
     Christ Named Number Plates.
    </description>

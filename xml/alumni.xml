@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="alumni.xsl"?>
+<merchandize_shop>
+	<items>
+		<name>Tshirts</name>
+		<price>$5.95</price>
+		<description>
+    Our famous Tshirt with great artwork
+   </description>
+		<stock>24</stock>
+	</items>
+	<items>
+		<name>Shirt</name>
+		<price>$9.80</price>
+		<description>
+   Shirts with christ logo.
+   </description>
+		<stock>20</stock>
+	</items>
+	<items>
+		<name>Accesories</name>
+		<price>$2.34</price>
+		<description>
+   Christ Accesories which look good.
+   </description>
+		<stock>80</stock>
+	</items>
+	<items>
+		<name>Stickers</name>
+		<price>$0.34</price>
+		<description>
+   Christ Stickers with a lot of variations.
+   </description>
+		<stock>100</stock>
+	</items>
+	<items>
+		<name>Tags</name>
+		<price>$0.34</price>
+		<description>
+   Christ Tags with a lot of variations.
+   </description>
+		<stock>100</stock>
+	</items>
+	<items>
+		<name>Mugs</name>
+		<price>$5.34</price>
+		<description>
+   Beautiful mugs to reminense your memories.
+   </description>
+		<stock>70</stock>
+	</items>
+	<items>
+		<name>Phone Covers</name>
+		<price>$6.34</price>
+		<description>
+    Beautiful Mobile Covers with a lot of options.
+   </description>
+		<stock>100</stock>
+	</items>
+	<items>
+		<name>Number plates</name>
+		<price>$12.34</price>
+		<description>
+    Christ Named Number Plates.
+   </description>
+		<stock>100</stock>
+	</items>
+</merchandize_shop>

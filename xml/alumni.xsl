@@ -12,11 +12,8 @@
 						<th>stock</th>
 					</tr>
 					<xsl:for-each select="merchandize_shop/items">
-					<!-- sort by name -->
-						<xsl:sort select="name"/>
 					
-					<!-- show prices above 10 dollars -->
-						<xsl:if test="price &gt; 10"> 
+						
 						<tr>
 							<td>
 								<xsl:value-of select="name"/>
@@ -31,7 +28,7 @@
 								<xsl:value-of select="stock"/>
 							</td>
 						</tr>
-						</xsl:if>
+						
 						
 					</xsl:for-each>
 				</table>

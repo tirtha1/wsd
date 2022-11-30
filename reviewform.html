@@ -93,7 +93,7 @@
       }
       .week {
       display:flex;
-      justfiy-content:space-between;
+      
       }
       .colums {
       display:flex;
@@ -199,9 +199,47 @@
       }
     </style>
   </head>
+  <script>
+function validateForm()
+{
+  let x = document.forms["myform"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+}
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+let email = document.forms["myform"]["email"].value;
+
+if(!email.match(mailformat))
+{
+alert("You have entered an invalid email address!");
+return false;
+}
+let phone = document.forms["myform"]["phone"].value;
+var phoneno = /^\d{10}$/;
+if(phone.match(phoneno))
+        {
+      return true;
+        }
+      else
+        {
+        alert("Phone number must be 10 digits long.");
+        return false;
+        }
+console.log("hello");
+var pincode= /^[1-9]{1}[0-9]{2}\s{0,1}[0-9]{3}$/;
+let pincodeno= document.forms["myform"]["zip"].value;
+if(!pincodeno.match(pincode))
+{
+  alert("Zip code invalid");
+    return false;
+}
+
+}
+</script>
   <body>
     <div class="testbox">
-      <form action="/">
+      <form action="christ.jpeg" name="myform" onsubmit="return validateForm()">>
         <div class="banner">
           <h1>Volunteer Signup</h1>
         </div>
@@ -210,32 +248,33 @@
         <br/>
         <div class="colums">
           <div class="item">
-            <label for="name">Name<span>*</span></label>
-            <input id="name" type="text" name="name" required/>
+            <label for="fname" type="text" name="fname">Name<span>*</span></label>
+            <input id="name" type="text" name="fname" />
           </div>
           <div class="item">
-            <label for="eaddress">Email Address<span>*</span></label>
-            <input id="eaddress" type="text"   name="eaddress" required/>
+            <label for="email" name="email">Email Address<span>*</span></label>
+            <input id="eaddress" type="text"   name="email" />
+
           </div>
           <div class="item">
-            <label for="phone">Phone<span>*</span></label>
-            <input id="phone" type="tel"   name="phone" required/>
+            <label for="phone" name="phone">Phone<span>*</span></label>
+            <input id="phone" type="tel"   name="phone" />
           </div>
           <div class="item">
             <label for="street">Street<span>*</span></label>
-            <input id="street" type="text"   name="street" required/>
+            <input id="street" type="text"   name="street" />
           </div>
           <div class="item">
             <label for="city">City<span>*</span></label>
-            <input id="city" type="text"   name="city" required/>
+            <input id="city" type="text"   name="city" />
           </div>
           <div class="item">
             <label for="state">State<span>*</span></label>
-            <input id="state" type="text"   name="state" required/>
+            <input id="state" type="text"   name="state" />
           </div>
           <div class="item">
-            <label for="zip">Zip<span>*</span></label>
-            <input id="zip" type="text"   name="zip" required/>
+            <label for="zip" name="zip">Zip<span>*</span></label>
+            <input id="zip" type="text"   name="zip" />
           </div>
         </div>
         <div class="question">
@@ -339,7 +378,7 @@
           </div>
         </div>
         <div class="btn-block">
-          <button type="submit">Submit</button>
+          <button type="submit" name="validate" value="validate">Submit</button>
         </div>
       </form>
     </div>

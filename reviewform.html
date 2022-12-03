@@ -234,8 +234,19 @@ if(!pincodeno.match(pincode))
   alert("Zip code invalid");
     return false;
 }
-
 }
+</script>
+<script>
+  function onnumber(input)
+  {
+    var num=/[^0-9]/gi;
+    input.value=input.value.replace(num,"");
+  }
+  function ontext(input1)
+  {
+    var text = /[^a-zA-Z]+$/;
+    input1.value=input1.value.replace(text,"");
+  }
 </script>
   <body>
     <div class="testbox">
@@ -249,7 +260,7 @@ if(!pincodeno.match(pincode))
         <div class="colums">
           <div class="item">
             <label for="fname" type="text" name="fname">Name<span>*</span></label>
-            <input id="name" type="text" name="fname" />
+            <input id="name" type="text" name="fname" onkeyup="ontext(this)"/>
           </div>
           <div class="item">
             <label for="email" name="email">Email Address<span>*</span></label>
@@ -258,7 +269,7 @@ if(!pincodeno.match(pincode))
           </div>
           <div class="item">
             <label for="phone" name="phone">Phone<span>*</span></label>
-            <input id="phone" type="tel"   name="phone" />
+            <input id="phone" type="tel"   name="phone" onkeyup="onnumber(this)"/>
           </div>
           <div class="item">
             <label for="street">Street<span>*</span></label>

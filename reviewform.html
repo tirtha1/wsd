@@ -1,6 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+      function setCookie(cname,cvalue,exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires=" + d.toGMTString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      }
+      
+      function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+      function printcookie()
+      {
+        if (user != "") {
+          alert("Welcome again " + user);
+        } else {
+           user = document.forms["myform"]["fname"].value;
+           if (user != "" && user != null) {
+             setCookie("username", user, 30);
+           }
+        }
+      }
+      function submitcookie()
+      {
+        
+      }
+      function checkCookie() {
+        var user=getCookie("username");
+        if (user != "") {
+          alert("Welcome again " + user);
+        } else {
+           user = document.forms["myform"]["fname"].value;
+           if (user != "" && user != null) {
+             setCookie("username", user, 30);
+           }
+        }
+      }
+      </script>
     <title>Volunteer Sign up form</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -248,7 +298,10 @@ if(!pincodeno.match(pincode))
     input1.value=input1.value.replace(text,"");
   }
 </script>
-  <body>
+  <body onload="checkCookie()">
+    
+  
+    
     <div class="testbox">
       <form action="christ.jpeg" name="myform" onsubmit="return validateForm()">>
         <div class="banner">
@@ -389,9 +442,10 @@ if(!pincodeno.match(pincode))
           </div>
         </div>
         <div class="btn-block">
-          <button type="submit" name="validate" value="validate">Submit</button>
+          <button type="submit" name="validate" value="validate" onclick="" >Submit</button>
         </div>
       </form>
+      
     </div>
   </body>
 </html>

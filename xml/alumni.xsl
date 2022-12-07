@@ -13,7 +13,9 @@
 					</tr>
 					<xsl:for-each select="merchandize_shop/items">
 					
-						
+						      <xsl:sort select="stock"/>
+							  
+
 						<tr>
 							<td>
 								<xsl:value-of select="name"/>

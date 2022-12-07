@@ -10,7 +10,7 @@
               <xs:element name="name" type="xs:string" />
               <xs:element name="price" type="xs:string" />
               <xs:element name="description" type="xs:string" />
-              <xs:element name="stock" type="xs:unsignedByte" />
+              <xs:element name="stock" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

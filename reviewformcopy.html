@@ -1,178 +1,128 @@
 <!DOCTYPE html>
 <html>
   <head>
-  </script>
-  <!DOCTYPE html>
-  <html>
-  <head>
+    <script>
+      function setCookie() 
+      {
+        // document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"; 
+        var color = readCookie("backgroundColor");
+if (color) {
+    document.body.style.backgroundColor = color;
+}
+        // var d = new Date();
+        // d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        // var expires = "expires=" + d.toGMTString();/
+  document.cookie = "userName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+  var object1 = {};
+  object1.name = document.forms["myform"]["name"].value;
+  object1.email= document.forms["myform"]["email"].value;
+  object1.phone = document.forms["myform"]["phone"].value;
+  object1.color = color;
+
+  console.log(object1.email);
+    var jsonString = JSON.stringify(object1);
+        // var info=cname + "=" + cvalue + ";" +" "+ cmail + "=" + email+ ";"+expires+ ";path=/";
+        // document.cookie = cname + "=" + cvalue + ";" +" "+ cmail + "=" + email+ ";"+expires+ ";path=/";
+        // console.log(document.cookie);
+        document.cookie = jsonString;
+        console.log(document.cookie);
+        getCookie();
       
-</script>
-<!DOCTYPE html>
-<html>
-<head>
-<script>
-function setCookie(cname,cvalue,exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  var expires = "expires=" + d.toGMTString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-  console.log(document.cookie);
-}
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function checkCookie() {
-  var color = readCookie("backgroundColor");
-if (color) {
-    document.body.style.backgroundColor = color;
-}
-  var user=getCookie("username");
-  var email=getCookie("email");
-  var phone=getCookie("phone");
-  console.log(document.cookie);
-  
-  if (user != "" && email != "" && phone != "") {
-    alert("Welcome again " + user + " with email-id "+ email +"and phone number "+ phone);
-    sessionStorage.setItem("FirstName", user);
-    // deleteall();
-
-    // document.cookie = "username=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-    // document.cookie = "email=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-    // document.cookie = "phone=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-  } else {
-    
-    
-     user =document.forms["myform"]["fname"].value;
-     email =document.forms["myform"]["email"].value;
-     phone =document.forms["myform"]["phone"].value;
-     
-     sessionStorage.setItem("FirstName", user);
-     
-    console.log("hey"+sessionStorage);
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
-     if (email != "" && email != null) {
-       setCookie("email", email, 30);
-     }
-     if (phone != "" && phone != null) {
-       setCookie("phone", phone, 30);
-     }
-  }
-  
-}
-function checkCookieonsubit() {
-  deleteall();
-  var color = readCookie("backgroundColor");
-if (color) {
-    document.body.style.backgroundColor = color;
-}
-  var user=getCookie("username");
-  var email=getCookie("email");
-  var phone=getCookie("phone");
-  console.log(document.cookie);
-  
-  if (user != "" && email != "" && phone != "") {
-    alert("Welcome again " + user + " with email-id "+ email +"and phone number "+ phone);
-    sessionStorage.setItem("FirstName", user);
-    // deleteall();
-
-    // document.cookie = "username=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-    // document.cookie = "email=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-    // document.cookie = "phone=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-  } else {
-    
-    
-     user =document.forms["myform"]["fname"].value;
-     email =document.forms["myform"]["email"].value;
-     phone =document.forms["myform"]["phone"].value;
-     
-     sessionStorage.setItem("FirstName", user);
-     
-    console.log("hey"+sessionStorage);
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
-     if (email != "" && email != null) {
-       setCookie("email", email, 30);
-     }
-     if (phone != "" && phone != null) {
-       setCookie("phone", phone, 30);
-     }
-  }
-  
-}
-</script>
-
-
-  <!-- <script>
-  function setCookie(cname,cvalue,exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    console.log(document.cookie);
-  }
-  
-  function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i < ca.length; i++) {
-      var c = ca[i];
-      while (c.charAt(0) == ' ') {
-        c = c.substring(1);
       }
-      if (c.indexOf(name) == 0) {
-        return c.substring(name.length, c.length);
-      }
-    }
-    return "";
-  }
-  
-  function checkCookie() {
-    var user=getCookie("username");
-    var email=getCookie("email");
-    var phone=getCookie("phone");
-    console.log(document.cookie);
-    
-    if (user != "" && email != "" && phone != "") {
-      alert("Welcome again " + user + "with email-id "+ email +"and phone number "+ phone);
-      // document.cookie = "username=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-      // document.cookie = "email=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-      // document.cookie = "phone=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-    } else {
-       user =document.forms["form1"]["name"].value
-       email =document.forms["form1"]["email"].value
-       phone =document.forms["form1"]["phone"].value
-       if (user != "" && user != null) {
-         setCookie("username", user, 30);
-       }
-       if (email != "" && email != null) {
-         setCookie("email", email, 30);
-       }
-       if (phone != "" && phone != null) {
-         setCookie("phone", phone, 30);
-       }
-    }
-    
-  }
-  </script> -->
+      
+      function getCookie() {
 
+        console.log(document.cookie);
+        // var decodedCookie = decodeURIComponent(document.cookie);
+        // var decodedCookie=json.parse(document.cookie);
+        if (document.cookie.length != 0) {
+    console.log(document.cookie);
+
+    document.cookie = "backgroundColor=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    var obj = JSON.parse(document.cookie);
+    console.log("hello");   
+    alert("FullName=" + obj.name + " " + "Email=" + obj.email + " " + "Phone=" + obj.phone);
+    }
+  else {
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    alert("Cookie not available");
+    }
+} 
+        // console.log(decodedCookie);
+        // var ca = decodedCookie.split(';');
+        // // console.log(ca);
+        // for(var i = 0; i < ca.length; i++) {
+        //   var c = ca[i];
+        //   while (c.charAt(0) == ' ') {
+        //     c = c.substring(1);
+        //   }
+        //   if (c.indexOf(name) == 0)
+        //   {
+        //     return c.substring(name.length, c.length);
+        //   }
+          // if(c.indexOf("email") == 0)
+          // {
+          //   return c.substring(name.length, c.length);
+          // }
+          
+      //   }
+      //   return "";
+      // }
+     
+    
+      // function checkCookie() {
+      //   var user=getCookie("username");
+      //   var email=getCookie("email");
+      //   if (user != "") {
+      //     // document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+      //     alert("Welcome again  " + user+ "  with email="+email);
+      //      document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+      //   } else {
+      //      user = document.forms["myform"]["fname"].value;
+      //      email=document.forms["myform"]["email"].value;
+      //      if (user != "" && user != null) {
+      //        setCookie("username", user, 30,"email",email);
+      //      }
+           
+      //   }
+        
+      // }
+
+//       function createCookiecolor(name, value, days) {
+//     if (days) {
+//         var date = new Date();
+//         date.setTime(date.getTime()+(days*24*60*60*1000));
+//         var expires = "; expires="+date.toGMTString();
+//     }
+//     else var expires = "";
+//     document.cookie = name+"="+value+expires+"; path=/";
+// }
+
+// function readCookiecolor(name) {
+//     var nameEQ = name + "=";
+//     var ca = document.cookie.split(';');
+//     for(var i=0;i < ca.length;i++) {
+//         var c = ca[i];
+//         while (c.charAt(0)==' ') c = c.substring(1,c.length);
+//         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+//     }
+//     return null;
+// }
+
+// function eraseCookiecolor(name) {
+//     createCookie(name,"",-1);
+// }
+// function background(color){
+//     document.body.style.backgroundColor = color;
+//     createCookie("backgroundColor", color, 365);
+// }
+
+
+      </script>
       <script>
         function createCookie(name, value, days) {
     if (days) {
@@ -182,6 +132,16 @@ if (color) {
     }
     else var expires = "";
     document.cookie = name+"="+value+expires+"; path=/";
+    console.log(document.cookie);
+  //   var object1 = {};
+  // object1.color = value+expires+"; path=/";
+  // // var jsonString = JSON.stringify(object1);
+  //       var info=cname + "=" + cvalue + ";" +" "+ cmail + "=" + email+ ";"+expires+ ";path=/";
+  //       document.cookie = cname + "=" + cvalue + ";" +" "+ cmail + "=" + email+ ";"+expires+ ";path=/";
+        // console.log(document.cookie);
+        // document.cookie = jsonString;
+        // console.log(document.cookie);
+        
 }
 
 function readCookie(name) {
@@ -201,7 +161,7 @@ function background(color){
 function eraseCookie(name) {
     createCookie(name,"",-1);
 }
-</script>
+      </script>
     <title>Volunteer Sign up form</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -459,34 +419,16 @@ if(!pincodeno.match(pincode))
 
     
   }
-  function deleteall()
-  {
-    document.cookie = "username=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-    document.cookie = "email=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-    document.cookie = "phone=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-    document.cookie = "backgroundColor=; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-  }
 </script>
-<!-- SESSION CODE -->
-<!-- <script>
-  
-  let name = document.forms["myform"]["name"].value;
-  
-  sessionStorage.setItem("FirstName", name);
-  console.log(sessionStorage);
-  // let personName = sessionStorage.getItem("lastname");
-  // document.getElementById("demo").innerHTML = personName;
-  </script> -->
-  <body onload="checkCookie();">
+  <body onload="setCookie();">
     
     <div class="setcolor">
       <button type="button" onclick="randomecolor()">Click to change background color randomly</button>
 
     </div>
     
-    
     <div class="testbox">
-      <form action="thankyoupage.html" name="myform" onsubmit="return validateForm()">>
+      <form action="christ.jpeg" name="myform" onsubmit="return validateForm()">>
         <div class="banner">
           <h1>Volunteer Signup</h1>
         </div>
@@ -625,11 +567,7 @@ if(!pincodeno.match(pincode))
           </div>
         </div>
         <div class="btn-block">
-          <button type="submit" name="validate" value="validate" onclick="checkCookieonsubit()" >Submit</button>
-        </div>
-        <div class="btn-block">
-          <button type="button" onclick="deleteall()">Click to delete all cookies</button>
-    
+          <button type="submit" name="validate" value="validate" onclick="setCookie()" >Submit</button>
         </div>
       </form>
 
